@@ -5,7 +5,7 @@ using DTO.My.HighSchoolProject.WebAPI.GetDtos;
 using DTO.My.HighSchoolProject.WebAPI.GetDtos.GroupByStudentsSmC;
 using My.HighSchoolProject.Business.ServiceInterfaces.JoinInterFaces;
 using My.HighSchoolProject.DataAccess.BaseEntities;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using My.HighSchoolProject.DataAccess.UnitOfWork;
 using Org.BouncyCastle.Asn1.IsisMtt.X509;
 

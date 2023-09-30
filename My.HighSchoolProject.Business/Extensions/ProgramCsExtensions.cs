@@ -21,6 +21,7 @@ using DTO.My.HighSchoolProject.WebAPI.Dto.StudentDayOffDtos;
 using DTO.My.HighSchoolProject.WebAPI.Dto.StudentDayOffHasStudentsDto;
 using DTO.My.HighSchoolProject.WebAPI.Dto.StudentDtos;
 using DTO.My.HighSchoolProject.WebAPI.Dto.TeacherDtos;
+using DTO.My.HighSchoolProject.WebAPI.Dto.TeacherHasCoursesDtos;
 using DTO.My.HighSchoolProject.WebAPI.DtosInterfaces;
 using DTO.My.HighSchoolProject.WebAPI.GetDtos;
 using DTO.My.HighSchoolProject.WebAPI.GetDtos.GroupByStudentsSmC;
@@ -54,6 +55,7 @@ using My.HighSchoolProject.Business.Services.ResponsibilityService;
 using My.HighSchoolProject.Business.Services.SemesterService;
 using My.HighSchoolProject.Business.Services.StudentDayOffService;
 using My.HighSchoolProject.Business.Services.StudentService;
+using My.HighSchoolProject.Business.Services.TeacherHasCoursesService;
 using My.HighSchoolProject.Business.Services.TeacherService;
 using My.HighSchoolProject.Business.ValidationRules.BranchValidation;
 using My.HighSchoolProject.Business.ValidationRules.ClassroomAndCourseValidations;
@@ -76,8 +78,9 @@ using My.HighSchoolProject.Business.ValidationRules.SemesterValidations;
 using My.HighSchoolProject.Business.ValidationRules.StudentDayOffValidation;
 using My.HighSchoolProject.Business.ValidationRules.StudentMajorclassesValidations;
 using My.HighSchoolProject.Business.ValidationRules.StudentValidations;
+using My.HighSchoolProject.Business.ValidationRules.TeachersHasCoursesValidations;
 using My.HighSchoolProject.Business.ValidationRules.TeacherValidations;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using My.HighSchoolProject.DataAccess.UnitOfWork;
 namespace My.HighSchoolProject.Business.Extensions
 {
@@ -262,7 +265,17 @@ namespace My.HighSchoolProject.Business.Extensions
             services.AddScoped<ITeacherService, TeacherService>();
             #endregion
 
-            services.AddScoped<IDtoCourseSchedules, CourseSchedulesService>();
+            services.AddScoped<ICourseSchedulesService, CourseSchedulesService>();
+
+            #region TeacherHasCourses
+            services.AddTransient<IValidator<CreateTeacherHasCoursesDto>, CreateTeacherHasCoursesValidator>();
+            services.AddTransient<IValidator<UpdateTeacherHasCoursesDto>, UpdateTeacherHasCoursesValidator>();
+
+            services.AddScoped<ITeacherHasCoursesService, TeacherHasCoursesService>();
+            #endregion
+
+           
+
         }
 
     }

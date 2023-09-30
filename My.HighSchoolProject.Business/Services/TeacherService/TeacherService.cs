@@ -2,16 +2,10 @@
 using Common.My.HighSchoolProject.WebAPI.Response;
 using Common.My.HighSchoolProject.WebAPI.ResponseInterface;
 using DTO.My.HighSchoolProject.WebAPI.Dto.TeacherDtos;
-using DTO.My.HighSchoolProject.WebAPI.Dto.TeacherDtos;
 using FluentValidation;
 using My.HighSchoolProject.Business.ServiceInterfaces;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using My.HighSchoolProject.DataAccess.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace My.HighSchoolProject.Business.Services.TeacherService
 {

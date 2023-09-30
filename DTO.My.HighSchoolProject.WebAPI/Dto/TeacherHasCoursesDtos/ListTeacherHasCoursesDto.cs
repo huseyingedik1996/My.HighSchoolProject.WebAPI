@@ -1,4 +1,5 @@
 ﻿using DTO.My.HighSchoolProject.WebAPI.DtosInterfaces;
+using My.HighSchoolProject.DataAccess.Models2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,12 @@ namespace DTO.My.HighSchoolProject.WebAPI.Dto.TeacherHasCoursesDtos
 {
     public class ListTeacherHasCoursesDto : IDtoTeacherHasCourses
     {
-        public int idTeacher { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int idCourses { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int IdTeacherhasCourses { get; set; }
+
+        public int IdTeachers { get; set; }
+
+        public int IdCourse { get; set; }
+
+        public Teacher Teacher { get; set; }
     }
 }

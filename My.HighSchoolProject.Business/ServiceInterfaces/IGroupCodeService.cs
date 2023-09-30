@@ -1,7 +1,7 @@
 ﻿using Common.My.HighSchoolProject.WebAPI.ResponseInterface;
 using DTO.My.HighSchoolProject.WebAPI.Dto.ClassDtos;
 using DTO.My.HighSchoolProject.WebAPI.Dto.GroupCodeDtos;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,7 @@
 ﻿using DTO.My.HighSchoolProject.WebAPI.Dto.ContactDtos;
 using DTO.My.HighSchoolProject.WebAPI.Dto.StudentDtos;
 using FluentValidation;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using System;
 using System.Collections.Generic;
 using System.Linq;

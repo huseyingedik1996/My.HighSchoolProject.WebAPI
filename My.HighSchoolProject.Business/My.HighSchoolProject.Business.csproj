@@ -29,8 +29,4 @@
     <ProjectReference Include="..\My.HighSchoolProject.DataAccess\My.HighSchoolProject.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\TeacherHasCoursesService\" />
-  </ItemGroup>
-
 </Project>

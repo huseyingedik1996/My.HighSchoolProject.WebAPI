@@ -24,7 +24,7 @@ using DTO.My.HighSchoolProject.WebAPI.Dto.StudentDtos;
 using DTO.My.HighSchoolProject.WebAPI.Dto.TeacherDtos;
 using DTO.My.HighSchoolProject.WebAPI.Dto.TeacherHasCoursesDtos;
 using My.HighSchoolProject.DataAccess.BaseEntities;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -138,7 +138,7 @@ namespace My.HighSchoolProject.Business.Mapping
             #region ClassroomsGroup
             CreateMap<Classroomsgroup, CreateClassroomsGroupDto>().ReverseMap();
             CreateMap<Classroomsgroup, UpdateClassroomsGroupDto>().ReverseMap();
-            CreateMap<Classroomsgroup,  ListClassroomsGroupDto>().ReverseMap();
+            CreateMap<Classroomsgroup, ListClassroomsGroupDto>().ReverseMap();
             CreateMap<ListClassroomsGroupDto, UpdateClassroomsGroupDto>().ReverseMap();
             #endregion
 
@@ -195,6 +195,13 @@ namespace My.HighSchoolProject.Business.Mapping
             CreateMap<Courseschedule, UpdateCourseSchedulesDto>().ReverseMap();
             CreateMap<Courseschedule, ListCourseSchedulesDto>().ReverseMap();
             CreateMap<ListCourseSchedulesDto, UpdateCourseSchedulesDto>().ReverseMap();
+            #endregion
+
+            #region TeacherHasCourse
+            CreateMap<TeachersHasCourse, CreateTeacherHasCoursesDto>().ReverseMap();
+            CreateMap<TeachersHasCourse, UpdateTeacherHasCoursesDto>().ReverseMap();
+            CreateMap<TeachersHasCourse, ListTeacherHasCoursesDto>().ReverseMap();
+            CreateMap<ListTeacherHasCoursesDto, UpdateTeacherHasCoursesDto>().ReverseMap();
             #endregion
         }
     }

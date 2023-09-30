@@ -10,7 +10,8 @@ using DTO.My.HighSchoolProject.WebAPI.Dto.StudentClassMajorsDtos;
 using DTO.My.HighSchoolProject.WebAPI.Dto.TeacherDtos;
 using DTO.My.HighSchoolProject.WebAPI.DtosInterfaces;
 using Microsoft.AspNetCore.Localization;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.Business.ServiceInterfaces;
+using My.HighSchoolProject.DataAccess.Models2;
 using My.HighSchoolProject.DataAccess.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace My.HighSchoolProject.Business.Services.CourseSchedulesService
 {
-    public class CourseSchedulesService : IDtoCourseSchedules
+    public class CourseSchedulesService : ICourseSchedulesService
     {
         private readonly IMapper _mapper;
         private readonly IUow _uow;
@@ -31,15 +32,7 @@ namespace My.HighSchoolProject.Business.Services.CourseSchedulesService
             _uow = uow;
         }
 
-        int IDtoCourseSchedules.IdClassGroup { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IDtoCourseSchedules.IdTeachers { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IDtoCourseSchedules.IdCourse { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IDtoCourseSchedules.IdGroupByStudentsMajorAndClasses { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        TimeSpan IDtoCourseSchedules.StartTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        TimeSpan IDtoCourseSchedules.EndTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string IDtoCourseSchedules.DayOfWeek { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public async Task<CreateCourseSchedulesDto> Create(CreateCourseSchedulesDto createSchedule)
+        public async Task Create()
         {
             var classRoom = _mapper.Map<List<ListClassroomsGroupDto>>(_uow.GetRepository<Classroomsgroup>().GetAll);
             var course = _mapper.Map<List<ListCourseDto>>(_uow.GetRepository<Course>().GetAll());
@@ -52,12 +45,11 @@ namespace My.HighSchoolProject.Business.Services.CourseSchedulesService
             DayOfWeek currentDay = DayOfWeek.Monday;
             int numberOfDays = 5;
             int count = 0;
+
+            CreateCourseSchedulesDto createSchedule = new CreateCourseSchedulesDto();
+                    
             
             
-            
-               
-            if (createSchedule.CourseCountPerDay > 0)
-            {
                 var courseCountsPerDay = createSchedule.CourseCountPerDay;
 
                 for (int dayIndex = 0; dayIndex < numberOfDays; dayIndex++)
@@ -144,9 +136,19 @@ namespace My.HighSchoolProject.Business.Services.CourseSchedulesService
                         }
                     }
                 }
-            }
+            
+            Courseschedule courseSchedule = new Courseschedule();
+            createSchedule.IdClassGroup = courseSchedule.IdClassGroup;
+            createSchedule.IdCourse = courseSchedule.IdCourse;
+            createSchedule.IdGroupByStudentsMajorAndClasses = createSchedule.IdGroupByStudentsMajorAndClasses;
+            createSchedule.IdTeachers = courseSchedule.IdTeachers;
+            createSchedule.StartTime = courseSchedule.StartTime;
+            createSchedule.EndTime = courseSchedule.EndTime;
+            createSchedule.DayOfWeek = courseSchedule.DayOfWeek;
+
+            var created = _uow.GetRepository<Courseschedule>().Create(courseSchedule);
             await _uow.SaveChanges();
-            return createSchedule;
+            
         }
     }
 }

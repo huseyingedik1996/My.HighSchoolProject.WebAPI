@@ -29,7 +29,7 @@ namespace My.HighSchoolProject.WebAPI.Controllers
         public async Task<IActionResult> UpdateDtos([FromQuery] UpdateBranchDtos updateDto)
         {
             var updatedMajor = await _service.UpdateDtos(updateDto);
-            return Ok(updateDto);
+            return Ok(updatedMajor);
         }
 
         [HttpGet("branch/getall")]

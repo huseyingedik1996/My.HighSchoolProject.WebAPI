@@ -1,7 +1,7 @@
 ﻿using DTO.My.HighSchoolProject.WebAPI.Dto.GroupCodeDtos;
 using Microsoft.AspNetCore.Mvc;
 using My.HighSchoolProject.Business.ServiceInterfaces;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 
 namespace My.HighSchoolProject.WebAPI.Controllers
 {

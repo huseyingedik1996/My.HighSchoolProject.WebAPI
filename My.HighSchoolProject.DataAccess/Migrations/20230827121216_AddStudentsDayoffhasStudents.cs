@@ -12,49 +12,7 @@ namespace My.HighSchoolProject.DataAccess.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-    name: "Teacher_has_courses",
-    columns: table => new
-    {
-        idTeacher = table.Column<int>(type: "int", nullable: false),
-        idCourse = table.Column<int>(type: "int", nullable: false)
-    },
-     constraints: table =>
-     {
-        
-     })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.AlterDatabase()
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "branches",
-                columns: table => new
-                {
-                    idBranches = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    BranchName = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PRIMARY", x => x.idBranches);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "classes",
-                columns: table => new
-                {
-                    IdClasses = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    ClassNumber = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PRIMARY", x => x.IdClasses);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
+            
 
             migrationBuilder.CreateTable(
                 name: "classrooms",

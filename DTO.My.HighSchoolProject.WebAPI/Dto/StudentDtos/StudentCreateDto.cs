@@ -1,7 +1,7 @@
 ﻿using DTO.My.HighSchoolProject.WebAPI.Dto.StudentClassMajorsDtos;
 using DTO.My.HighSchoolProject.WebAPI.DtosInterfaces;
 using My.HighSchoolProject.DataAccess.BaseEntities;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

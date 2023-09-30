@@ -1,5 +1,5 @@
 ﻿using DTO.My.HighSchoolProject.WebAPI.DtosInterfaces;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using System;
 using System.Collections;
 using System.Collections.Generic;

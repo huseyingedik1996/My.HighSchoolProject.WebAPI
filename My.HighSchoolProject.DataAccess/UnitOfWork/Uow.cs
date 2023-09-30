@@ -1,5 +1,5 @@
 ﻿using My.HighSchoolProject.DataAccess.InterFaces.IRepositories;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using My.HighSchoolProject.DataAccess.Repositories;
 using System;
 using System.Collections.Generic;

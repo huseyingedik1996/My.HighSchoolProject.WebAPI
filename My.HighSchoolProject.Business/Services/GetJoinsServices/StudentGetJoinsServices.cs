@@ -4,7 +4,7 @@ using DTO.My.HighSchoolProject.WebAPI.GetDtos.StudentJoinDtos;
 using Microsoft.Azure.KeyVault.Models;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using My.HighSchoolProject.Business.ServiceInterfaces.JoinInterFaces;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using My.HighSchoolProject.DataAccess.UnitOfWork;
 using System;
 using System.Collections.Generic;

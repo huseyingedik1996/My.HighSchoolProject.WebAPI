@@ -8,7 +8,8 @@ namespace DTO.My.HighSchoolProject.WebAPI.DtosInterfaces
 {
     public interface IDtoTeacherHasCourses
     {
-        int idTeacher { get ; set; }
-        int idCourses { get; set; }
+        public int IdTeachers { get; set; }
+
+        public int IdCourse { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using DTO.My.HighSchoolProject.WebAPI.Dto.ClassroomAndCourseDto;
 using FluentValidation;
-using My.HighSchoolProject.DataAccess.Models;
+using My.HighSchoolProject.DataAccess.Models2;
 using System;
 using System.Collections.Generic;
 using System.Linq;

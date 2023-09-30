@@ -9,7 +9,10 @@ namespace DTO.My.HighSchoolProject.WebAPI.Dto.TeacherHasCoursesDtos
 {
     public class UpdateTeacherHasCoursesDto : IDtoTeacherHasCourses
     {
-        public int idTeacher { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int idCourses { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int IdTeacherhasCourses { get; set; }
+
+        public int IdTeachers { get; set; }
+
+        public int IdCourse { get; set; }
     }
 }
